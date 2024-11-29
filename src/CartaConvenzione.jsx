@@ -4,7 +4,7 @@ import { Card } from "primereact/card";
 import { CSSTransition } from 'react-transition-group';
 import logo from './assets/logoFenice.png';
 
-export default function CartaConvenzione({ logoConvenzione }) {
+export default function CartaConvenzione({ logoConvenzione, descrizione }) {
     const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
     function toggleDescription() {
@@ -29,8 +29,8 @@ export default function CartaConvenzione({ logoConvenzione }) {
                 <div className="card-content h-8rem">
                     <div className="card-header h-9rem">
                         <img src={logo} alt="Logo Sinistro" className="logo h-11rem" />
-                        <p className="text-3xl">X</p>
-                        <img src={logoConvenzione} alt="Logo Destro" className="logo" />
+                        <p className="laX text-3xl">X</p>
+                        <img src={logoConvenzione} alt="Logo Destro" className="logo h-11rem" />
                     </div>
                 </div>
             </Card>
@@ -41,9 +41,7 @@ export default function CartaConvenzione({ logoConvenzione }) {
                 unmountOnExit
             >
                 <Card className="md:w-25rem description-card mt-3">
-                    <p>
-                        L'associazione la Fenice offre un 10% di sconto da **tiziocaiosempronio**.
-                    </p>
+                    <p>{descrizione}</p>
                 </Card>
             </CSSTransition>
         </div>
